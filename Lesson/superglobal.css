@@ -1,0 +1,86 @@
+/* Import Bootstrap for additional styling */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css');
+
+body {
+    font-family: Arial, sans-serif;
+    background: url(https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+.frm {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background: #f8f9fa;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+    transition: border 0.3s, background 0.3s;
+}
+
+input[type="file"]:hover {
+    border-color: #0056b3;
+    background: #e9ecef;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    width: 100%;
+    max-width: 200px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        background-size: contain;
+    }
+    
+    .frm {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        background-size: 100% 100%;
+    }
+}
