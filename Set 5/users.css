@@ -1,0 +1,189 @@
+/* General Reset & Font */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Background Image */
+  .bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url('https://img.freepik.com/free-photo/abstract-uv-ultraviolet-light-composition_23-2149243965.jpg?t=st=1744090467~exp=1744094067~hmac=4b228a3937f2af4c5c55c73aeae09dfe73a3fcc5b09f84c0a6cd8cfce8391c5d&w=740');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+    filter: brightness(0.8);
+  }
+  
+  /* Navigation */
+  nav {
+    text-align: right;
+    padding: 1rem 2rem;
+  }
+  
+  /* Logout Button as Emoji -> Hover Text */
+  nav a {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 24px;
+    background-color: transparent;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Emoji shown by default */
+  nav a::before {
+    content: "🔒";
+    font-size: 24px;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+    opacity: 1;
+  }
+  
+  /* Full "Logout" text hidden initially */
+  nav a::after {
+    content: "Logout";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    background-color: #ff4d4f;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    transition: opacity 0.3s ease, left 0.3s ease;
+  }
+  
+  /* On hover: emoji fades out, text fades in */
+  nav a:hover::before {
+    opacity: 0;
+  }
+  
+  nav a:hover::after {
+    opacity: 1;
+    left: 40px;
+  }
+  
+  
+  /* Main Content Container */
+/* Table Wrapper */
+.container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Table Base Style */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Table Header with RGB Gradient */
+  th {
+    background: linear-gradient(135deg, #ff4d4f, #4a90e2, #7d4aff);
+    color: white;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    animation: rgbPulse 3s infinite alternate;
+  }
+  
+  /* Table Row Base */
+  td {
+    padding: 14px 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Row Striping with Soft Colors */
+  tr:nth-child(even) td {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  tr:nth-child(odd) td {
+    background-color: rgba(240, 248, 255, 0.6); /* aliceblue */
+  }
+  
+  /* Hover Effects */
+  tr:hover td {
+    background-color: rgba(255, 255, 255, 1);
+    color: #333;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* RGB Pulse Animation for the Header */
+  @keyframes rgbPulse {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Optional: Cell Border or Divider */
+  td:not(:last-child), th:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  
+  /* Responsive Table */
+  @media (max-width: 600px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+  
+    th {
+      display: none;
+    }
+  
+    tr {
+      margin-bottom: 1rem;
+    }
+  
+    td {
+      position: relative;
+      padding-left: 50%;
+      border-bottom: 1px solid #ccc;
+    }
+  
+    td::before {
+      position: absolute;
+      top: 12px;
+      left: 16px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: bold;
+      content: attr(data-label);
+    }
+  }
+  
